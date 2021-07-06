@@ -1,0 +1,20 @@
+// Primary Colors
+$textblue: hsl(238, 29%, 16%);
+$textred: hsl(14, 88%, 65%);
+
+// Gradient Colors
+$gradientviolet: hsl(273, 75%, 66%);
+$gradientblue: hsl(240, 73%, 65%);
+
+// Neutral Colors
+$vdkblue: hsl(237, 12%, 33%);
+$dkblue: hsl(240, 6%, 50%);
+
+// Dividers
+$dividerblue: hsl(240, 5%, 91%);
+
+@mixin breakpoint {
+    @media (min-width: 56rem) {
+        @content;
+    }
+}

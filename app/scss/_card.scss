@@ -1,0 +1,64 @@
+.card {
+  background: #ffffff;
+  border-radius: 32px;
+  max-width: 56rem;
+  padding: 2.875rem 1.5rem;
+  background-image: url("/images/bg-pattern-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: center 0%;
+  background-size: 15rem;
+  @include breakpoint {
+    display: flex;
+    position: relative;
+    margin: auto;
+    padding: 4.375rem 6.25rem 4.375rem 0;
+    background-image: url("/images/bg-pattern-desktop.svg");
+    background-size: 45%;
+    background-repeat: no-repeat;
+    background-position: -13% center;
+  }
+  &__box {
+    display: none;
+    @include breakpoint {
+      display: block;
+      position: absolute;
+      top: 57%;
+      left: 0%;
+      transform: translateX(-50%) translateY(-50%);
+      z-index: 1;
+    }
+  }
+  &__image {
+    position: relative;
+    @include breakpoint {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    img {
+      display: block;
+      position: absolute;
+      top: -9.8rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: auto;
+      max-width: 15rem;
+      @include breakpoint {
+        position: relative;
+        top: auto;
+        left: auto;
+        max-width: 25rem;
+        transform: translateX(-4rem);
+      }
+    }
+  }
+  &__text {
+    padding-top: 7rem;
+    @include breakpoint {
+      flex: 1;
+      padding-top: 0px;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-family: "Kumbh Sans", sans-serif;
+  min-height: 100vh;
+  padding: 10rem 1rem;
+  background-image: linear-gradient($gradientviolet, $gradientblue);
+  color: $textblue;
+  @include breakpoint {
+    padding: 3rem;
+  }
+}
+
+h1,
+h2 {
+  margin-top: 0px;
+}
+
+.attribution {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  width: 100%;
+  padding: 0px 2px 10px 2px;
+  transform: translateX(-50%);
+  color: #fff;
+  text-align: center;
+  a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 150ms ease-in-out;
+    &:hover {
+      color: $textred;
+    }
+  }
+}
