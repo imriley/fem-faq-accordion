@@ -1,15 +1,12 @@
 document.querySelectorAll('.accordion__question').forEach((item) => {
     item.addEventListener('click', (event) => {
-        console.log('Click!!');
-
         let accCollapse = item.nextElementSibling;
-
         if (!item.classList.contains('collapsing')) {
             
             if (!item.classList.contains('open')) {
+                hideAll();
                 accCollapse.style.display = 'block';
                 let accHeight = accCollapse.clientHeight;
-                console.log(accHeight)
                 setTimeout(() => {
                     accCollapse.style.height = accHeight + 'px';
                     accCollapse.style.display = '';
@@ -35,3 +32,22 @@ document.querySelectorAll('.accordion__question').forEach((item) => {
         }
     });
 });
+
+let ques = document.querySelectorAll('.accordion__question');
+
+function hideAll() {
+    for (i = 0; i < ques.length; i++) {
+        if (ques[i].classList.contains('open')) {
+            active = ques[i].nextElementSibling;
+            active.classList = 'accordion__collapse collapsing';
+            setTimeout(() => {
+                active.style.height = '0px';
+            }, 1);
+            setTimeout(() => {
+                active.classList = 'accordion__collapse collapse';
+                active.style.height = '';
+            }, 300);
+            ques[i].classList.toggle("open", false);
+        }
+    }
+}
